@@ -1,0 +1,107 @@
+
+<div class="nav d-flex mx-auto bg-success">
+  <a [routerLink]="['/dashboard']">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi50wEbKTK3Jz-lY0_m69pAwLldgrwmIQAJw&s" alt="" height="50">
+  </a>
+<div>
+  <ul class="list d-flex justify-content-between align-items-center gap-2">
+      <li>
+          <button (click)="logout()" class="btn fw-bold text-white bg-danger">Logout</button>
+      </li>
+      <li>
+          <button (click)="profile()" class="btn fw-bold text-white bg-danger">Profile Page</button>
+      </li>
+      <li>
+          <button (click)="editprofile()" class="btn fw-bold text-white bg-danger">Edit Profile Page</button>
+      </li>
+  </ul>
+</div>
+</div>
+
+<div class="container mt-4 vh-100 d-flex justify-content-center align-items-center">
+    <div class="card w-100 shadow-lg" style="max-width: 600px; overflow-y: auto; height: 90%;">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Edit Profile</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              [(ngModel)]="user.firstName"
+              name="firstName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              [(ngModel)]="user.lastName"
+              name="lastName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              class="form-control"
+              [(ngModel)]="user.phoneNumber"
+              name="phoneNumber"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              [(ngModel)]="user.email"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="accountType" class="form-label">Account Type</label>
+            <input
+              type="text"
+              id="accountType"
+              class="form-control"
+              [(ngModel)]="user.accountType"
+              name="accountType"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="kinName" class="form-label">Kin Name</label>
+            <input
+              type="text"
+              id="kinName"
+              class="form-control"
+              [(ngModel)]="user.kinName"
+              name="kinName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="kinPhone" class="form-label">Kin Phone</label>
+            <input
+              type="text"
+              id="kinPhone"
+              class="form-control"
+              [(ngModel)]="user.kinPhone"
+              name="kinPhone"
+            />
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

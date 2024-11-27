@@ -1,0 +1,42 @@
+<section>
+    <div class="container p-3">
+      <div class="row">
+        <div class="col-md-6">
+          
+          <div class="left-content">
+            <img src="https://images.pexels.com/photos/29532227/pexels-photo-29532227/free-photo-of-polish-zloty-banknotes-on-white-surface.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" width="550" height="580">
+          </div>
+        </div>
+        <div class="col-md-6">
+          
+          <div class="right-content">
+            <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" class="p-4">
+              <h2 class="text-center">Sign Up</h2>
+              <input type="text" placeholder="First Name" class="form-control mb-3" [(ngModel)]="user.firstName" name="firstName" required>
+              <input type="text" placeholder="Last Name" class="form-control mb-3" [(ngModel)]="user.lastName" name="lastName" required>
+              <input type="number" placeholder="Phone Number" class="form-control mb-3" [(ngModel)]="user.phoneNumber" name="phoneNumber" required>
+              <input type="email" placeholder="Email" class="form-control mb-3" [(ngModel)]="user.email" name="email" required>
+              <!-- Dropdown for Account Type -->
+<select class="form-control mb-3" [(ngModel)]="user.accountType" name="accounttype" required>
+    <option value="" disabled selected>Select Account Type</option>
+    <option value="Saving">Savings</option>
+    <option value="Checkings">Checkings</option>
+   
+  </select>
+  
+              <input type="password" placeholder="Password" class="form-control mb-3" [(ngModel)]="user.password" name="password" required>
+              
+  
+             
+              <p class="fw-bold">Enter next of kin details</p>
+              <input type="text" placeholder="Next of Kin Full Name" class="form-control mb-3"  [(ngModel)]="user.kinName" name="kinName" required>
+
+              <input type="text" placeholder="Next of Kin Phone Number" class="form-control mb-3" [(ngModel)]="user.kinPhone" name="kinPhone" required>
+              <button class="btn btn-success text-white text-center" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

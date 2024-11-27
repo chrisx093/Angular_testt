@@ -1,0 +1,60 @@
+<div class="nav d-flex mx-auto bg-success">
+  <a [routerLink]="['/dashboard']">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi50wEbKTK3Jz-lY0_m69pAwLldgrwmIQAJw&s" alt="" height="50">
+  </a>
+<div>
+  <ul class="list d-flex justify-content-between align-items-center gap-2">
+      <li>
+          <button (click)="logout()" class="btn fw-bold text-white bg-danger">Logout</button>
+      </li>
+      <li>
+          <button (click)="profile()" class="btn fw-bold text-white bg-danger">Profile Page</button>
+      </li>
+      <li>
+          <button (click)="editprofile()" class="btn fw-bold text-white bg-danger">Edit Profile Page</button>
+      </li>
+  </ul>
+</div>
+</div>
+<div class="container mt-4">
+  <div *ngIf="users.length; else noData" class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="h5 mb-0">User Details</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Account Type</th>
+            <th>Password</th>
+            <th>Kin Name</th>
+            <th>Kin Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.phoneNumber }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.accountType }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.kinName }}</td>
+            <td>{{ user.kinPhone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <div class="alert alert-warning text-center" role="alert">
+      No users found.
+    </div>
+  </ng-template>
+</div>
